@@ -1,24 +1,53 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column    | Type    | Options                              |
+| --------- | ------- | ------------------------------------ |
+| user_name | string  | null: false, add_index(unique: true) |
+| email     | string  | null: false, add_index(unique: true) |
+| password  | string  | null: false                          |
+| group_id  | integer | null: false                          |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :tweets
+- has_many :groups, through: groups_users
 
-* Configuration
+## groups テーブル
 
-* Database creation
+| Column     | Type    | Options                              |
+| ---------- | ------- | ------------------------------------ |
+| group_name | string  | null: false, add_index(unique: true) |
+| user_id    | integer |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many : users, through: groups_users
+- has_many : tweets
 
-* Services (job queues, cache servers, search engines, etc.)
+## groups_users テーブル
 
-* Deployment instructions
+| Column   | Type    | Options                        |
+| -------- | ------- | ------------------------------ |
+| user_id  | integer | null: false, foreign_key: true |
+| group_id | integer | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :group
+
+## tweets テーブル
+
+| Column   | Type    | Options                        |
+| -------- | ------- | ------------------------------ |
+| body     | text    | null: false                    |
+| image    | string  |
+| user_id  | integer | null: false, foreign_key: true |
+| group_id | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :group

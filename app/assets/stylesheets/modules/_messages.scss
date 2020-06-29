@@ -12,6 +12,31 @@
   &__user-name {
     height: 100px;
     background-color: #253141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .top-items {
+      height: 20px;
+      width: 260px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__name {
+      }
+      &__icons {
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+
+        .icons-btn {
+          margin-left: 5px;
+          color: #ffffff;
+        }
+      }
+    }
   }
 
   &__group-list {

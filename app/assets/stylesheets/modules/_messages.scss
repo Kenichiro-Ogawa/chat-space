@@ -25,6 +25,7 @@
       align-items: center;
 
       &__name {
+        font-weight: bold;
       }
       &__icons {
         width: 60px;
@@ -42,6 +43,22 @@
   &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+
+    .groups-items {
+      width: 260px;
+      margin: 0 20px 40px;
+      padding-top: 20px;
+      color: #ffffff;
+      font-weight: bold;
+
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
   }
 }
 

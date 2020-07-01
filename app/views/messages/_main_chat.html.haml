@@ -27,3 +27,10 @@
       .tweet-block__message
         こんにちは！
   .Chat-main__message-form
+    %form.form__contents
+      .form__input
+        %input.form__input--text{placeholder: "type a message", type: "text"}
+        %label{class: "form__input--img"}
+          = icon('far', 'image')
+          %input.file-text{type: "file",}
+      %input.form__submit--btn{name: "submit", value: "Send", type: "submit"}

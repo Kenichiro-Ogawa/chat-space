@@ -6,23 +6,25 @@
   display: flex;
 }
 
+@mixin hght-dsply_flx-algn_cntr($height) {
+  height: $height;
+  display: flex;
+  align-items: center;
+}
+
 .Side-bar {
   width: 300px;
 
   &__user-name {
-    height: 100px;
+    @include hght-dsply_flx-algn_cntr(100px);
     background-color: #253141;
-    display: flex;
     justify-content: center;
-    align-items: center;
 
     .top-items {
-      height: 20px;
+      @include hght-dsply_flx-algn_cntr(20px);
       width: 260px;
       color: #ffffff;
-      display: flex;
       justify-content: space-between;
-      align-items: center;
 
       &__name {
         font-weight: bold;
@@ -63,15 +65,14 @@
 
 .Chat-main {
   width: calc(100vw - 300px);
+
   &__group-info {
     background-color: #fff;
     border-bottom: 1px solid #eeeeee;
 
     .group-info {
-      height: 100px;
-      display: flex;
+      @include hght-dsply_flx-algn_cntr(100px);
       justify-content: space-between;
-      align-items: center;
 
       &__left {
         margin-left: 40px;
@@ -133,10 +134,8 @@
   }
 
   &__message-form {
-    height: 90px;
+    @include hght-dsply_flx-algn_cntr(90px);
     background-color: #d2d2d2;
-    display: flex;
-    align-items: center;
 
     .form__contents {
       width: 100%;
@@ -144,14 +143,13 @@
       align-items: center;
 
       .form__input {
+        @include hght-dsply_flx-algn_cntr(50px);
         width: 100%;
-        display: flex;
         margin-left: 40px;
-        align-items: center;
         position: relative;
         &--text {
-          width: 100%;
           height: 50px;
+          width: 100%;
           padding-left: 10px;
           display: block;
           border: none;

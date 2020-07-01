@@ -1,0 +1,36 @@
+.Chat-main
+  .Chat-main__group-info
+    .group-info
+      .group-info__left
+        .group-info__left--name
+          techcamp
+        .group-info__left--member
+          Member : masa
+      .group-info__right
+        =link_to "#", class: "edit-btn" do
+          Edit
+  .Chat-main__message-list
+    .tweet-block
+      .tweet-block__content
+        .tweet-block__content--name
+          masa
+        .tweet-block__content--date
+          0000/00/00/(Wed) 00:00:00
+      .tweet-block__message
+        おはよう！
+    .tweet-block
+      .tweet-block__content
+        .tweet-block__content--name
+          masa
+        .tweet-block__content--date
+          0000/00/00/(Wed) 00:00:00
+      .tweet-block__message
+        こんにちは！
+  .Chat-main__message-form
+    %form.form__contents
+      .form__input
+        %input.form__input--text{placeholder: "type a message", type: "text"}
+        %label{class: "form__input--img"}
+          = icon('far', 'image')
+          %input.file-text{type: "file",}
+      %input.form__submit--btn{name: "submit", value: "Send", type: "submit"}

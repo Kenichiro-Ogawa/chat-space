@@ -10,13 +10,11 @@
           = icon('fas', 'cog')
 
   .Side-bar__group-list
-    .groups-items
-      .groups-items__name
-        techcamp
-      .groups-items__message
-        まだメッセージがありません
-    .groups-items
-      .groups-items__name
-        techmaster
-      .groups-items__message
-        こんにちは
+    - current_user.groups.each do |group|
+      .groups-items
+        = link_to "#" do
+          .groups-items__name
+            = group.name
+          .groups-items__message
+            まだメッセージがありません
+

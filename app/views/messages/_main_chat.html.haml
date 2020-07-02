@@ -27,10 +27,14 @@
       .tweet-block__message
         こんにちは！
   .Chat-main__message-form
-    %form.form__contents
+    = form_with model: [@group, @message], html: {class: "form__contents"}, local: true do |f|
       .form__input
-        %input.form__input--text{placeholder: "type a message", type: "text"}
-        %label{class: "form__input--img"}
+        = f.text_field :content, class: 'form_input--text', placeholder: 'type a message'
+        = f.label :image, class: 'form__input--img' do
           = icon('far', 'image')
-          %input.file-text{type: "file",}
-      %input.form__submit--btn{name: "submit", value: "Send", type: "submit"}
+          = f.file_field :image, class: 'file-text'
+      = f.submit 'Send', class: 'form__submit--btn'
+/        %label{class: "form__input--img"}
+/          = icon('far', 'image')
+/          %input.file-text{type: "file",}
+/      %input.form__submit--btn{name: "submit", value: "Send", type: "submit"}

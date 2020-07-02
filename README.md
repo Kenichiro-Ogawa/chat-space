@@ -10,7 +10,7 @@
 
 ### Association
 
-- has_many :tweets
+- has_many :messages
 - has_many :groups_users
 - has_many :groups, through: :groups_users
 
@@ -24,7 +24,7 @@
 
 - has_many : groups_users
 - has_many : users, through: :groups_users
-- has_many : tweets
+- has_many : messages
 
 ## groups_users テーブル
 
@@ -38,7 +38,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## tweets テーブル
+## messages テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |

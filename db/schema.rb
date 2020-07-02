@@ -27,17 +27,6 @@ ActiveRecord::Schema.define(version: 2020_07_02_123013) do
     t.index ["user_id"], name: "index_groups_users_on_user_id"
   end
 
-  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "text"
-    t.string "image"
-    t.bigint "group_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["group_id"], name: "index_tweets_on_group_id"
-    t.index ["user_id"], name: "index_tweets_on_user_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false

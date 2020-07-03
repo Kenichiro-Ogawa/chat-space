@@ -3,38 +3,21 @@
     .group-info
       .group-info__left
         .group-info__left--name
-          techcamp
+          = @group.name
         .group-info__left--member
-          Member : masa
+          Member :
+          - @group.users.each do |user|
+            = user.name
       .group-info__right
-        =link_to "#", class: "edit-btn" do
+        = link_to edit_group_path(@group), class: "edit-btn" do
           Edit
   .Chat-main__message-list
-    .tweet-block
-      .tweet-block__content
-        .tweet-block__content--name
-          masa
-        .tweet-block__content--date
-          0000/00/00/(Wed) 00:00:00
-      .tweet-block__message
-        おはよう！
-    .tweet-block
-      .tweet-block__content
-        .tweet-block__content--name
-          masa
-        .tweet-block__content--date
-          0000/00/00/(Wed) 00:00:00
-      .tweet-block__message
-        こんにちは！
+    = render @messages
   .Chat-main__message-form
     = form_with model: [@group, @message], html: {class: "form__contents"}, local: true do |f|
       .form__input
-        = f.text_field :content, class: 'form_input--text', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__input--text', placeholder: 'type a message'
         = f.label :image, class: 'form__input--img' do
           = icon('far', 'image')
           = f.file_field :image, class: 'file-text'
       = f.submit 'Send', class: 'form__submit--btn'
-/        %label{class: "form__input--img"}
-/          = icon('far', 'image')
-/          %input.file-text{type: "file",}
-/      %input.form__submit--btn{name: "submit", value: "Send", type: "submit"}

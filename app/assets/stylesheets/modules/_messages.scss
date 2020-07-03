@@ -48,7 +48,7 @@
 
     .groups-items {
       width: 260px;
-      margin: 0 20px 40px;
+      margin: 0 20px;
       padding-top: 20px;
 
       &__name {
@@ -57,6 +57,7 @@
         color: #ffffff;
       }
       &__message {
+        margin-bottom: 40px;
         font-size: 11px;
         color: #ffffff;
       }
@@ -106,12 +107,13 @@
   }
 
   &__message-list {
-    height: calc(100vh - 100px - 90px);
+    height: calc(100vh - 190px);
     background-color: #fafafa;
     padding-top: 35px;
+    overflow: scroll;
 
     .tweet-block {
-      margin: 0 0 46px 40px;
+      padding: 0 0 46px 40px;
 
       &__content {
         display: flex;

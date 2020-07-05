@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :groups, through: :groups_users
   has_many :messages
 
-  validates :name, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
+  validates :email, presence: true, uniqueness: {case_sensitive: true}
 end

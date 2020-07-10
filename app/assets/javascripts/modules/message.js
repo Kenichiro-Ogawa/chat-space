@@ -1,10 +1,10 @@
 $(function () {
   function buildHTML(message) {
     if (message.image) {
-      let html = `<div class="tweet-block">
+      let html = `<div class="tweet-block", data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
-              ${message.user.name}
+              ${message.user_name}
             </div>
             <div class="tweet-block__content--date">
               ${message.created_at}
@@ -19,7 +19,7 @@ $(function () {
         </div>`;
       return html;
     } else {
-      let html = `<div class="tweet-block">
+      let html = `<div class="tweet-block", data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
               ${message.user_name}

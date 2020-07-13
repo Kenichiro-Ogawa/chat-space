@@ -1,7 +1,7 @@
 $(function () {
   function buildHTML(message) {
     if (message.image) {
-      let html = `<div class="tweet-block", data-message-id=${message.id}>
+      let html = `<div class="tweet-block" data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
               ${message.user_name}
@@ -19,7 +19,7 @@ $(function () {
         </div>`;
       return html;
     } else {
-      let html = `<div class="tweet-block", data-message-id=${message.id}>
+      let html = `<div class="tweet-block" data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
               ${message.user_name}

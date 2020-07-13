@@ -1,7 +1,7 @@
 $(function () {
   function buildHTML(message) {
     if (message.image) {
-      let html = `<div class="tweet-block", data-message-id=${message.id}>
+      let html = `<div class="tweet-block" data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
               ${message.user_name}
@@ -19,7 +19,7 @@ $(function () {
         </div>`;
       return html;
     } else {
-      let html = `<div class="tweet-block", data-message-id=${message.id}>
+      let html = `<div class="tweet-block" data-message-id=${message.id}>
           <div class="tweet-block__content">
             <div class="tweet-block__content--name">
               ${message.user_name}
@@ -40,7 +40,7 @@ $(function () {
 
   let reloadMessages = function () {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    let last_message_id = $(".tweet-block:last").data("message-id");
+    let last_message_id = $(".tweet-block:last").data("message-id") || 0;
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages",
